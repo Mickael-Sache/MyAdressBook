@@ -32,50 +32,56 @@ namespace MyAdressBook
             /*
             Set a MaxLenght properties to create contacts
             */
-            Properties.ContactProperties props;
-            props.maxLengthName = 20;
-            props.maxMenghtPrename = 15;
-            props.maxLenghtCity = 25;
-            props.maxLenghtMail = 30;
+            //Properties.ContactProperties props;
+            //props.maxLengthName = 20;
+            //props.maxMenghtPrename = 15;
+            //props.maxLenghtCity = 25;
+            //props.maxLenghtMail = 30;
             #endregion
 
-            List<Properties.Contact> Carnet = new List<Properties.Contact>();
+            //SortedList<Properties.Contact, Properties.ContactProperties>
+            //Class Properties avec un Constructor -- Add
+            //Class person + Carnet avec Method Add
+            //Add item to contacts
+            //Delegate avec Compare
+            //Ou list.sort by typeContact (obj1, obj2)
+            //Key = numtel -- Value = person
+
 
             #region StreamReader
-            using (StreamReader sr = File.OpenText(filepath))
-            {
-                while ((tmp = sr.ReadLine()) != null)
-                {
-                    Properties.Contact entry;
-                    if (string.IsNullOrWhiteSpace(tmp))
-                    {
-                        Console.WriteLine("Contact Vide");
-                    }
-                    else if (tmp.Length != props.maxLengthName +
-                                           props.maxMenghtPrename +
-                                           props.maxLenghtCity +
-                                           props.maxLenghtMail)
-                    {
-                        Console.WriteLine("Format Contact Incorrect");
-                    }
-                    else
-                    {
-                        entry.name = tmp.Substring(0, props.maxLengthName);
-                        entry.prename = tmp.Substring(props.maxLengthName, props.maxMenghtPrename);
-                        entry.city = tmp.Substring(props.maxLengthName + props.maxMenghtPrename, props.maxLenghtCity);
-                        entry.mail = tmp.Substring(props.maxLengthName + props.maxMenghtPrename + props.maxLenghtCity, props.maxLenghtMail);
+            //using (StreamReader sr = File.OpenText(filepath))
+            //{
+            //    while ((tmp = sr.ReadLine()) != null)
+            //    {
+            //        if (string.IsNullOrWhiteSpace(tmp))
+            //        {
+            //            Console.WriteLine("Contact Vide");
+            //        }
+            //        else if (tmp.Length != props.maxLengthName +
+            //                               props.maxMenghtPrename +
+            //                               props.maxLenghtCity +
+            //                               props.maxLenghtMail)
+            //        {
+            //            Console.WriteLine("Format Contact Incorrect");
+            //        }
+            //        else
+            //        {
+            //            entry.name = tmp.Substring(0, props.maxLengthName);
+            //            entry.prename = tmp.Substring(props.maxLengthName, props.maxMenghtPrename);
+            //            entry.city = tmp.Substring(props.maxLengthName + props.maxMenghtPrename, props.maxLenghtCity);
+            //            entry.mail = tmp.Substring(props.maxLengthName + props.maxMenghtPrename + props.maxLenghtCity, props.maxLenghtMail);
 
-                        Carnet.Add(entry);
-                    }
-                }
-            }
+            //            Carnet.Add(entry);
+            //        }
+            //    }
+            //}
             #endregion
 
             bool OnStart = true;
 
             while (OnStart == true)
             {
-                Methods.Switch(Carnet, props, OnStart, filepath);
+                //Methods.Switch(Carnet, props, OnStart, filepath);
             }
 
         }//End of Main

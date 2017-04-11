@@ -33,72 +33,6 @@ namespace MyAdressBook
         }
 
         /// <summary>
-        /// Permet d'ajouter des contacts dans le Carnet
-        /// </summary>
-        /// <param name="Carnet"></param>
-        /// <param name="props"></param>
-        public static void AddContacts(List<Properties.Contact> Carnet, Properties.ContactProperties props)
-        {
-            Console.Write("Contact Name : ");
-            string tmpName = Console.ReadLine();
-            tmpName = Methods.Troncate(ref tmpName, props.maxLengthName);
-
-            SettingContact(Carnet, tmpName, props);
-        }
-
-        /// <summary>
-        /// Permet d'ajouter à un contact d'autres attributs (prenom, mail, etc)
-        /// </summary>
-        /// <param name="Carnet"></param>
-        /// <param name="props"></param>
-        public static void SettingContact(List<Properties.Contact> Carnet, string name, Properties.ContactProperties props)
-        {
-            Properties.Contact tmpContact;
-            tmpContact.name = name;
-
-            Console.Write("Contact Prename : ");
-            string inpTmp = Console.ReadLine();
-            inpTmp = Methods.Troncate(ref inpTmp, props.maxMenghtPrename);
-            tmpContact.prename = inpTmp;
-
-            Console.Write("Contact City : ");
-            inpTmp = Console.ReadLine();
-            inpTmp = Methods.Troncate(ref inpTmp, props.maxLenghtCity);
-            tmpContact.city = inpTmp;
-
-            Console.Write("Contact Mail : ");
-            inpTmp = Console.ReadLine();
-            inpTmp = Methods.Troncate(ref inpTmp, props.maxLenghtMail);
-            tmpContact.mail = inpTmp;
-
-            int position = 0;
-            while (position < Carnet.Count() && string.Compare(Carnet[position].name, name) < 0)
-            {
-                ++position;
-            }
-
-            Carnet.Insert(position, tmpContact);
-        }
-
-        /// <summary>
-        /// Sauvegarde les contacts dans le fichier *.txt correspondant
-        /// </summary>
-        /// <param name="Carnet"></param>
-        /// <param name="filepath"></param>
-        public static void Save(List<Properties.Contact> Carnet, string filepath)
-        {
-            int count = 0;
-            using(StreamWriter sw = File.CreateText(filepath))
-            {
-                foreach (var item in Carnet)
-                {
-                    sw.WriteLine("{0}{1}{2}{3}", item.name, item.prename, item.city, item.mail);
-                    ++count;
-                }
-            }
-        }
-
-        /// <summary>
         /// Méthode qui colore l'affichage du texte dans la console selon la couleur définit
         /// </summary>
         /// <param name="ForegroundColor"></param>
@@ -129,27 +63,6 @@ namespace MyAdressBook
                               "\t\t└───────────────────┘\n");
         }
 
-        /// <summary>
-        /// Permet d'ajouter un autre contact au Carnet
-        /// </summary>
-        /// <param name="Carnet"></param>
-        /// <param name="props"></param>
-        public static void AnotherContact(List<Properties.Contact> Carnet, Properties.ContactProperties props, bool boo, string filepath)
-        {
-            while (UserInput != "n")
-            {
-                Console.Write("Voulez-vous ajouter un autre contact ? (o/n) : ");
-                UserInput = Console.ReadLine();
-
-                if (UserInput == "o")
-                {
-                    Methods.AddContacts(Carnet, props);
-                    Methods.Switch(Carnet, props, boo, filepath);
-                }
-            }
-            Console.Clear();
-            Methods.Switch(Carnet, props, boo, filepath);
-        }
 
         /// <summary>
         /// Affiche un message selon le Case utilisé et passage de la booléenne à "False"
@@ -170,7 +83,7 @@ namespace MyAdressBook
         /// <param name="props"></param>
         /// <param name="boo"></param>
         /// <param name="filepath"></param>
-        public static void Switch(List<Properties.Contact> Carnet, Properties.ContactProperties props, bool boo, string filepath)
+        public static void Switch(bool boo, string filepath)
         {
             Methods.DisplayInfo();
             Console.Write("Veuillez saisir une commande : ");
@@ -181,14 +94,11 @@ namespace MyAdressBook
                 case "a": /*AddContact*/
                 case "A":
 
-                    Methods.AddContacts(Carnet, props);
-                    Methods.AnotherContact(Carnet, props, boo, filepath);
                     break;
 
                 case "s": /*SaveContact*/
                 case "S":
 
-                    Methods.Save(Carnet, filepath);
                     Methods.MsgCase("Contact enregistré(s) ..", boo);
                     break;
 
@@ -204,7 +114,6 @@ namespace MyAdressBook
                 default: /*Erreur*/
 
                     Console.WriteLine("Une erreur est survenue ..");
-                    Methods.Switch(Carnet, props, boo, filepath);
                     break;
             }
         }
