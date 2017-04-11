@@ -1,0 +1,12 @@
+c:\users\34011-36-07\documents\visual studio 2015\Projects\MyAdressBook\MyAdressBook\bin\Debug\MyAdressBook.exe.config
+C:\Users\34011-36-07\Documents\Visual Studio 2015\Projects\MyAdressBook\MyAdressBook\bin\Debug\MyAdressBook.exe
+C:\Users\34011-36-07\Documents\Visual Studio 2015\Projects\MyAdressBook\MyAdressBook\bin\Debug\MyAdressBook.pdb
+C:\Users\34011-36-07\Documents\Visual Studio 2015\Projects\MyAdressBook\MyAdressBook\obj\Debug\MyAdressBook.csprojResolveAssemblyReference.cache
+C:\Users\34011-36-07\Documents\Visual Studio 2015\Projects\MyAdressBook\MyAdressBook\obj\Debug\MyAdressBook.exe
+C:\Users\34011-36-07\Documents\Visual Studio 2015\Projects\MyAdressBook\MyAdressBook\obj\Debug\MyAdressBook.pdb
+C:\Users\34011-36-07\Source\Repos\MyAdressBook\MyAdressBook\bin\Debug\MyAdressBook.exe.config
+C:\Users\34011-36-07\Source\Repos\MyAdressBook\MyAdressBook\obj\Debug\MyAdressBook.exe
+C:\Users\34011-36-07\Source\Repos\MyAdressBook\MyAdressBook\obj\Debug\MyAdressBook.pdb
+C:\Users\34011-36-07\Source\Repos\MyAdressBook\MyAdressBook\bin\Debug\MyAdressBook.exe
+C:\Users\34011-36-07\Source\Repos\MyAdressBook\MyAdressBook\bin\Debug\MyAdressBook.pdb
+C:\Users\34011-36-07\Source\Repos\MyAdressBook\MyAdressBook\obj\Debug\MyAdressBook.csprojResolveAssemblyReference.cache
