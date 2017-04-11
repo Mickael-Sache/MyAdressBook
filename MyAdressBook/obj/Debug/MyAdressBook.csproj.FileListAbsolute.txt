@@ -10,3 +10,6 @@ C:\Users\34011-36-07\Source\Repos\MyAdressBook\MyAdressBook\obj\Debug\MyAdressBo
 C:\Users\34011-36-07\Source\Repos\MyAdressBook\MyAdressBook\bin\Debug\MyAdressBook.exe
 C:\Users\34011-36-07\Source\Repos\MyAdressBook\MyAdressBook\bin\Debug\MyAdressBook.pdb
 C:\Users\34011-36-07\Source\Repos\MyAdressBook\MyAdressBook\obj\Debug\MyAdressBook.csprojResolveAssemblyReference.cache
+C:\Users\Cheewbie\Source\Repos\MyAdressBook\MyAdressBook\bin\Debug\MyAdressBook.exe.config
+C:\Users\Cheewbie\Source\Repos\MyAdressBook\MyAdressBook\obj\Debug\MyAdressBook.exe
+C:\Users\Cheewbie\Source\Repos\MyAdressBook\MyAdressBook\obj\Debug\MyAdressBook.pdb

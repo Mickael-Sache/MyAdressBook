@@ -4,13 +4,19 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.IO;
-
+using System.Collections;
 
 namespace MyAdressBook
 {
     class Program
     {
         const double version = 0.3;
+
+        private static int maxLengthName;
+        private static int maxMenghtPrename;
+        private static int maxLenghtCity;
+        private static int maxLenghtNumber;
+        private static int maxLenghtMail;
 
         static void Main(string[] args)
         {
@@ -32,11 +38,12 @@ namespace MyAdressBook
             /*
             Set a MaxLenght properties to create contacts
             */
-            //Properties.ContactProperties props;
-            //props.maxLengthName = 20;
-            //props.maxMenghtPrename = 15;
-            //props.maxLenghtCity = 25;
-            //props.maxLenghtMail = 30;
+            maxLengthName = 20;
+            maxMenghtPrename = 15;
+            maxLenghtCity = 25;
+            maxLenghtNumber = 10;
+            maxLenghtMail = 30;
+
             #endregion
 
             //SortedList<Properties.Contact, Properties.ContactProperties>
@@ -48,42 +55,19 @@ namespace MyAdressBook
             //Key = numtel -- Value = person
 
 
-            #region StreamReader
-            //using (StreamReader sr = File.OpenText(filepath))
-            //{
-            //    while ((tmp = sr.ReadLine()) != null)
-            //    {
-            //        if (string.IsNullOrWhiteSpace(tmp))
-            //        {
-            //            Console.WriteLine("Contact Vide");
-            //        }
-            //        else if (tmp.Length != props.maxLengthName +
-            //                               props.maxMenghtPrename +
-            //                               props.maxLenghtCity +
-            //                               props.maxLenghtMail)
-            //        {
-            //            Console.WriteLine("Format Contact Incorrect");
-            //        }
-            //        else
-            //        {
-            //            entry.name = tmp.Substring(0, props.maxLengthName);
-            //            entry.prename = tmp.Substring(props.maxLengthName, props.maxMenghtPrename);
-            //            entry.city = tmp.Substring(props.maxLengthName + props.maxMenghtPrename, props.maxLenghtCity);
-            //            entry.mail = tmp.Substring(props.maxLengthName + props.maxMenghtPrename + props.maxLenghtCity, props.maxLenghtMail);
-
-            //            Carnet.Add(entry);
-            //        }
-            //    }
-            //}
-            #endregion
-
-            bool OnStart = true;
-
-            while (OnStart == true)
+            using (StreamReader sr = File.OpenText(filepath))
             {
-                //Methods.Switch(Carnet, props, OnStart, filepath);
+                while ((tmp = sr.ReadLine()) != null)
+                {
+                    if (string.IsNullOrWhiteSpace(tmp))
+                    {
+                        Console.WriteLine("Contact Vide");
+                    }
+                }
             }
+
 
         }//End of Main
     }
 }
+
